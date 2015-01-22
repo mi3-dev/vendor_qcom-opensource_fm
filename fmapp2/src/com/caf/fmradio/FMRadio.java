@@ -1621,6 +1621,20 @@ public class FMRadio extends Activity
       boolean bStatus = false;
       if (mService != null) {
           try {
+            if(mService.isSSRInProgress()) {
+               Log.e(LOGTAG, "SSR In Progress, looping");
+               while(mService.isSSRInProgress()) {
+                  try
+                  {
+                     Thread.sleep(500);
+                  } catch (InterruptedException e)
+                  {
+                     break;
+                  }
+               }
+               Log.e(LOGTAG, "SSR done, continuing");
+            }
+
             if((false == mService.isFmOn()) && isAntennaAvailable()) {
                 bStatus = mService.fmOn();
                 if(bStatus) {
@@ -1681,11 +1695,21 @@ public class FMRadio extends Activity
       }
       if (mService != null) {
          try {
-            if(bSpeakerPhoneOn) {
-               mService.enableSpeaker(false);
-            }
             mService.fmRadioReset();
             enableRadioOnOffUI(false);
+
+            Log.e(LOGTAG, "Done with reset, restarting FM");
+            /* Start Turn ON sequence again */
+            mOnOffButton.setEnabled(false);
+            mOnOffButton.setClickable(false);
+            mOnOffButton.setOnClickListener(null);
+
+            mDisableRadioHandler.removeCallbacks(mDisableRadioTask);
+            mEnableRadioHandler.removeCallbacks(mEnableRadioTask);
+            mEnableRadioHandler.postDelayed(mEnableRadioTask, 0);
+
+            cleanupTimeoutHandler();
+            Log.e(LOGTAG, "Done with restart");
          }catch (RemoteException e) {
             e.printStackTrace();
          }
