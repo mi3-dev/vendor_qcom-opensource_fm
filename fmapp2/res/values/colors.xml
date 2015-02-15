@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="favorite_button_normal">#4DB6AC</color>
-    <color name="favorite_button_active">#673AB7</color>
-    <color name="background_color">#4DB6AC</color>
-    <color name="picker_background_color">#80CBC4</color>
+    <color name="favorite_button_normal">#4dd0e1</color>
+    <color name="favorite_button_active">#259b24</color>
+    <color name="background_color">#4fc3f7</color>
+    <color name="picker_background_color">#81d4fa</color>
     <!-- Material -->
-    <color name="primary">#009688</color>
-    <color name="primary_dark">#00796B</color>
-    <color name="accent">#673AB7</color>
+    <color name="primary">#03a9f4</color>
+    <color name="primary_dark">#0288d1</color>
+    <color name="accent">#259b24</color>
 </resources>
