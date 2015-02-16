@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="favorite_button_normal">#4dd0e1</color>
+    <color name="favorite_button_normal">#0288d1</color>
     <color name="favorite_button_active">#0277bd</color>
     <color name="background_color">#4fc3f7</color>
     <color name="picker_background_color">#81d4fa</color>
