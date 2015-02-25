@@ -27,10 +27,11 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 <resources>
-  <style name="FMTheme" parent="@android:Theme.Material">
+    <style name="FMTheme" parent="@android:Theme.Material">
         <item name="android:colorPrimary">@color/primary</item>
         <item name="android:colorPrimaryDark">@color/primary_dark</item>
         <item name="android:colorAccent">@color/accent</item>
+        <item name="android:navigationBarColor">@color/primary</item>
     </style>
     <style name="FMStationSeekBar">
         <item name="android:indeterminateOnly">false</item>
